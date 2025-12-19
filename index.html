@@ -110,11 +110,31 @@
         <div class="container">
             <h2>Fale Conosco</h2>
             <p>Peça sua pizza, tire dúvidas ou faça reservas. Estamos prontos para atender você!</p>
-            <form action="https://formspree.io/f/seu-id-aqui" method="POST">
-                <input type="text" name="nome" placeholder="Seu nome" required>
-                <input type="tel" name="telefone" placeholder="Seu telefone (com DDD)" required>
-                <textarea name="mensagem" placeholder="Sua mensagem ou pedido" rows="5" required></textarea>
+
+            <form action="https://formspree.io/f/xojajagg" method="POST">
+                <label for="nome">Nome completo</label>
+                <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
+
+                <label for="email">Seu e-mail (opcional, para resposta)</label>
+                <input type="email" name="_replyto" id="email" placeholder="seuemail@exemplo.com">
+
+                <label for="telefone">Seu melhor telefone *</label>
+                <input type="tel" name="telefone" id="telefone" placeholder="(11) 98765-4321" required>
+
+                <label for="mensagem">Sua mensagem ou pedido *</label>
+                <textarea name="mensagem" id="mensagem"
+                    placeholder="Ex: Quero pedir uma pizza Margherita grande com borda recheada..." rows="6"
+                    required></textarea>
+
+                <!-- Campo oculto anti-spam (obrigatório para plano grátis) -->
+                <input type="text" name="_gotcha" style="display:none" />
+
+                <!-- Campo oculto para assunto do e-mail (opcional, mas útil) -->
+                <input type="hidden" name="_subject" value="Novo contato do site Famiglia Caselati" />
+
                 <button type="submit">Enviar mensagem</button>
+
+                <input type="hidden" name="_next" value="https://famigliacaselati.com.br/thanks.html" />
             </form>
         </div>
     </section>
